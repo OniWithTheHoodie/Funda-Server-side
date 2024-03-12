@@ -1,0 +1,28 @@
+<%- include('./partials/head') %>
+
+<main>  
+<h1>Favoriete huizen</h1>
+
+<div class="container">
+<% alleHuizen.forEach( huis => { %>
+    
+        <div class="card">
+            <figure>
+                <img src="https://fdnd-agency.directus.app/assets/<%= huis.poster_image %>" class="house-card">
+            </figure>  
+
+            <article>
+                <a href="./huis1/<%= house.id %>"> <h2> <%= huis.street%> <%= huis.house_nr%> </h2> </a>
+                <p>€ <%- huis.price %></p>
+                 <p><%- huis.postal_code %> <%- huis.city %></p>
+                <p><%- huis.m2 %> m² • <%- huis.rooms %> Kamers</p>
+                <p><%- huis.m2 %></p>
+                <p><%- huis.agent %></p>
+            </article> 
+        </div>
+<% }) %>
+</div> 
+</main>
+</body>
+
+<%- include('./partials/foot') %>
