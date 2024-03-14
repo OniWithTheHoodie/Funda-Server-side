@@ -32,3 +32,27 @@
 ## Licentie
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
+
+
+Voor dit opdracht maak ik een website voor Funda. Hiervoor wordt node.js, express en ejs gebruikt waarbij er een database is gemaakt in directus. Al deze data word gebruikt om een dynamische website te bouwen voor Funda.
+
+Image directus
+
+Voor dit opdracht komen er paar belangerijke punten aanbod. 
+
+• As a User, I want to be able to see all my saved houses so that I can have a general impression of which houses I'm interested in.
+
+• As a User, I want to be able to see all te details of a saved house so that I can reconsider if it is still a house I want to keep in my favorite houses list.
+
+• As a User, I want to be able to create custom ratting points so that so I have a better control over qualities of the object that I value.
+
+• As a User, I want be able to create custom lists of houses that can then be shared with another user so that we can together and on asynchronous way veto or approve houses that we like.
+
+De bedoeling is deze functionaliteiten te verwerken in de site voor Funds om een goeie gebruikers er ervaring te creëren.
+
+Hiervoor zijn ook schetsen gemaakt die te vinden zijn in mijn wiki. 
+
+Dat bestaat uit een ontwerp voor de site van Funda, datamodel en een sitemap om een goed beeld te hebben waar er gebouwd moet worden.
+
+Link wiki schetsen
+
