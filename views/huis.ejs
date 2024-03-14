@@ -1,0 +1,34 @@
+<%- include('./partials/head') %>
+
+<body>
+    <main>  
+        <figure class="gallery-houses">
+        <% house.gallery.forEach(image => { %>
+            <img src="https://fdnd-agency.directus.app/assets/<%= image.directus_files_id.id %>">
+        <% }) %>
+        </figure>
+
+        <article class="detail">
+            <h1><%= house.street %></h1>
+            <p><%= house.postal_code %> <%= house.city %></p>
+            <p><%= house.m2 %> m² <%= house.rooms %> kamers</p>
+            <p>€ <%= house.price %></p>
+
+            <h2 class="description-line">Omschrijving</h2>
+
+            <article class="description">
+                
+                <p><%- house.description %></p>
+                
+                <div class="agent">
+                    <p>Makkelaar</p>
+                    <%- house.agent %>
+                </div>
+            </article>
+
+            
+        </article>
+    </main>
+</body>
+
+<%- include('./partials/foot') %>

@@ -28,25 +28,23 @@ app.get('/', function (request, response) {
     console.log(huizenHome.data);
 })
 
-app.get('/huis1/:id', function (request, response) {
-  const id = request.params.id
-  fetchJson('https://fdnd-agency.directus.app/items/f_houses/${id}')
-
-  
-      .then((apiData) => {
-          // request.params.id gebruik je zodat je de exacte student kan weergeven dit si een routeparmater naar de route van die persoon
-          if (apiData.data) {/*als data voer dan dit uit */
-              console.log('data bestaat u gaat nu naar de Detailpage page'+JSON.stringify(apiData))
-              // info gebruiken om die te linken aan apidata.data
-              response.render('huis1', {house: apiData.data});
-          } else {
-              console.log('No data found for house with id: ' + request.params.id);
-              //     laat de error zien als de data al niet gevonden word
-          }
-      })
-      .catch((error) => {
-          console.error('Error fetching house data:', error);
-      });
+app.get('/huis/:id', function (request, response) {
+  // request.params.id gebruik je zodat je de exacte huis kan weergeven dit is een routeparmater naar de route van die huis
+  const url = `https://fdnd-agency.directus.app/items/f_houses/${request.params.id}/?fields=*.*.*`
+  fetchJson(url).then((apiData) => {
+    if (apiData.data) {/*als data voer dan dit uit */
+      // console.log('data bestaat u gaat nu naar de Detailpage page'+JSON.stringify(apiData))
+      // info gebruiken om die te linken aan apidata.data
+      response.render('huis', {house: apiData.data});
+      // console.log(apiData)
+    } else {
+      console.log('No data found for house with id: ' + request.params.id);
+      //     laat de error zien als de data al niet gevonden word
+    }
+  })
+  .catch((error) => {
+      console.error('Error fetching house data:', error);
+  });
 });
 
 

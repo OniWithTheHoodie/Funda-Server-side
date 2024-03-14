@@ -10,6 +10,13 @@
   padding: 0;
 }
 
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* Header */
 nav {
   background-color: var(--secondary-bg-color);
@@ -90,3 +97,53 @@ article {
   padding: 1em;
 }
 
+/* Carousel */
+.gallery-houses {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+  & img {
+    width: 50%;
+  }
+}
+
+/* huis.ejs */
+.detail {
+  border-top: solid 0.2em var(--secondary-bg-color);
+  margin-top: 2em;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description-line {
+  border-top: solid 0.2em var(--color-main-text);
+  margin-top: 2em;
+  padding-top: 1em;
+  width: 100%;
+  text-align: center;
+}
+
+.description {
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+  margin-top: 2em;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.agent {
+  border: solid 0.2em var(--color-main-text);
+  padding: 5em;
+  text-align: center;
+  background: linear-gradient(var(--color-main-text) 20%, var(--main-bg-color) 80%);
+  
+  & p {
+    padding-bottom: 1em;
+  }
+}
