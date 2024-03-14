@@ -45,6 +45,11 @@ Hiervoor wordt Node.js, Express en EJS gebruikt, waarbij er een database is gema
 In mijn repository kun je in mijn wiki mijn code vinden en ook in de code sectie kun je mijn code downloaden. Hiervoor moet je Node.js installeren en in de terminal van VS Code kun je een npm install doen om benodigde packages te downloaden. In de server.js moet je JSON en Express importeren en de instelling voor het gebruik van EJS-templating toevoegen. Daarin vind je ook het pad dat is aangelegd voor de index.ejs, eventuele andere pagina's en de URL die wordt opgehaald uit Directus.
 
 ## Bronnen
+Bronnen die ik heb gebruikt zijn:
+
+https://ejs.co/
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while
+https://codepen.io/tag/slider
 
 ## Licentie
 
