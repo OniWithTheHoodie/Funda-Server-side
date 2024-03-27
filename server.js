@@ -21,12 +21,24 @@ app.use(express.static('public'))
 // Zorg dat werken met request data makkelijker wordt
 app.use(express.urlencoded({extended: true}))
 
+const ratings = []
 
 // Get Route voor de index
 app.get('/', function (request, response) {
-    response.render('index', {alleHuizen: huizenHome.data});
+    response.render('index', {
+      alleHuizen: huizenHome.data,
+      ratings: ratings
+    });
     console.log(huizenHome.data);
+    console.log(ratings);
 })
+
+app.post('/', function (request, response) { 
+  ratings.push(request.body.star)
+
+  response.redirect(300, '/')
+})
+
 
 app.get('/huis/:id', function (request, response) {
   // request.params.id gebruik je zodat je de exacte huis kan weergeven dit is een routeparmater naar de route van die huis
@@ -46,6 +58,7 @@ app.get('/huis/:id', function (request, response) {
       console.error('Error fetching house data:', error);
   });
 });
+
 
 
     
