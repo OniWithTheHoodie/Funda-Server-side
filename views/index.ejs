@@ -12,16 +12,18 @@
                     </figure>  
 
                     <article>
-                        <a href="./huis/<%= huis.id %>"> <h2> <%= huis.street%> <%= huis.house_nr%> </h2> </a>
-                        <p>€ <%- huis.price %></p>
-                        <p><%- huis.postal_code %> <%- huis.city %></p>
-                        <p><%- huis.m2 %> m² • <%- huis.rooms %> Kamers</p>
-                        <p><%- huis.m2 %></p>
-                        <p><%- huis.agent %></p>
+                        <ul>
+                            <a href="./huis/<%= huis.id %>"> <h2> <%= huis.street%> <%= huis.house_nr%> </h2> </a>
+                            <li>€ <%- huis.price %></li>
+                            <li><%- huis.postal_code %> <%- huis.city %></li>
+                            <li><%- huis.m2 %> m² • <%- huis.rooms %> Kamers</li>
+                            <li><%- huis.m2 %></li>
+                            <li><%- huis.agent %></li>
+                        </ul>
                     </article> 
 
                     <form action="/" method="post">
-                        <p class="rating-stars">
+                        <section class="rating-stars">
                            <input id="radio1<%= index %>" type="radio" name="star<%= index %>" value="1">
                             <label for="radio1<%= index %>">&#9733;</label>
                               
@@ -36,7 +38,7 @@
                           
                             <input id="radio5<%= index %>" type="radio" name="star<%= index %>" value="5">
                             <label for="radio5<%= index %>">&#9733;</label>
-                        </p>
+                        </section>
                     </form>
                 </div>
             <% }) %>
