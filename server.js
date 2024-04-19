@@ -21,7 +21,8 @@ app.use(express.static('public'))
 // Zorg dat werken met request data makkelijker wordt
 app.use(express.urlencoded({extended: true}))
 
-const ratings = []
+// 
+let ratings = ''
 
 // Get Route voor de index
 app.get('/', function (request, response) {
@@ -34,8 +35,8 @@ app.get('/', function (request, response) {
 })
 
 app.post('/', function (request, response) { 
-  ratings.push(request.body.star)
-
+  ratings = request.body.star
+  console.log(request.body)
   response.redirect(300, '/')
 })
 

@@ -8,7 +8,7 @@
             
                 <div class="card">
                     <figure>
-                        <img src="https://fdnd-agency.directus.app/assets/<%= huis.poster_image %>" class="house-card">
+                        <img src="https://fdnd-agency.directus.app/assets/<%= huis.poster_image %>" alt="" width="400" height="400"  class="house-card">
                     </figure>  
 
                     <article>
@@ -22,23 +22,11 @@
                         </ul>
                     </article> 
 
-                    <form action="/" method="post">
+                    <!-- Form een class meegegeven zodat ik deze specifieke form te selecteren -->
+                    <form action="/" method="post" class="ratingsFavorieten">
                         <section class="rating-stars">
-                           <input id="radio1<%= index %>" type="radio" name="star" value="1">
-                            <label for="radio1<%= index %>">&#9733;</label>
-                              
-                            <input id="radio2<%= index %>" type="radio" name="star" value="2">
-                            <label for="radio2<%= index %>">&#9733;</label>
-                              
-                            <input id="radio3<%= index %>" type="radio" name="star" value="3">
-                            <label for="radio3<%= index %>">&#9733;</label>
-            
-                            <input id="radio4<%= index %>" type="radio" name="star" value="4">
-                            <label for="radio4<%= index %>">&#9733;</label>
-                          
-                            <input id="radio5<%= index %>" type="radio" name="star" value="5">
-                            <label for="radio5<%= index %>">&#9733;</label>
-                        </section>
+                            <%- include('./partials/detailed-rating', {index: index}) %> <!-- Partials meegegen dit is de form in detailed-rating.ejs de waardes en radio input worden ook meegeven als een object-->
+                        </section> 
                     </form>
                 </div>
             <% }) %>

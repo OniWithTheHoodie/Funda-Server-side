@@ -123,6 +123,7 @@ form {
 
 & label {
     color: grey;
+    cursor: pointer;
   }
 
 & .rating-stars {
@@ -140,6 +141,16 @@ form {
 }
 }
 
+/* Style for deselected radio buttons */
+input[type="radio"]:checked:not(:hover) {
+  display: none; 
+}
+
+/* Style for deselected radio button labels */
+input[type="radio"]:checked:not(:hover) + label {
+  color: grey; 
+}
+
 
 /* detail.ejs */
 
@@ -152,7 +163,8 @@ form {
   flex-wrap: wrap;
   
   & img {
-    width: 50%;
+    max-width: 100%;
+    height: auto;
   }
 }
 
