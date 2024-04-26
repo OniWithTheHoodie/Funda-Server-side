@@ -1,33 +1,37 @@
 <%- include('./partials/head') %>
+<%- include('./partials/navigation') %>
 
 <body>
     <main>  
-        <figure class="gallery-houses">
-        <% house.gallery.forEach(image => { %>
-            <img src="https://fdnd-agency.directus.app/assets/<%= image.directus_files_id.id %>">
-        <% }) %>
-        </figure>
+        <section class="carousel">
+            <picture class="card-container">
+            <% house.gallery.forEach(image => { %>
+                <source class="card" src="https://fdnd-agency.directus.app/assets/<%= image.directus_files_id.id %>?format=webp" type="image/webp">
+                <source class="card" src="https://fdnd-agency.directus.app/assets/<%= image.directus_files_id.id %>?format=avif" type="image/avif">
+                <img class="card" src="https://fdnd-agency.directus.app/assets/<%= image.directus_files_id.id %>" alt="foto huis" width="400" height="400">
+            <% }) %>
+            </picture>
+        </section>
 
         <article class="detail">
-            <h1><%= house.street %></h1>
-            <p><%= house.postal_code %> <%= house.city %></p>
-            <p><%= house.m2 %> m² <%= house.rooms %> kamers</p>
-            <p>€ <%= house.price %></p>
-
+            <h2><%= house.street %></h2>
+            <ul>
+                <li><%= house.postal_code %> <%= house.city %></li>
+                <li><%= house.m2 %> m² <%= house.rooms %> kamers</li>
+                <li>€ <%= house.price %></li>
+            </ul>
             <h2 class="description-line">Omschrijving</h2>
-
-            <article class="description">
-                
-                <p><%- house.description %></p>
-                
-                <div class="agent">
-                    <h2>Makkelaar</h2>
-                    <%- house.agent %>
-                </div>
-            </article>
-
-            
         </article>
+
+        <article class="description">
+                
+            <p><%- house.description %></p>
+                
+            <div class="agent">
+                <h2>Makkelaar</h2>
+                <%- house.agent %>
+            </div>
+        </article>         
     </main>
 </body>
 

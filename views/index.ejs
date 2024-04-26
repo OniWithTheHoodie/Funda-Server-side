@@ -1,19 +1,24 @@
 <%- include('./partials/head') %>
+<%- include('./partials/navigation') %>
+
 <body>
     <main>  
-        <h1>Favoriete huizen</h1>
-
+        <header>
+            <h1>Favoriete huizen</h1>
+        </header>
+        
         <div class="container">
             <% alleHuizen.forEach((huis, index) => { %>
-            
-                <div class="card">
-                    <figure>
-                        <img src="https://fdnd-agency.directus.app/assets/<%= huis.poster_image %>" alt="" width="400" height="400"  class="house-card">
-                    </figure>  
+                <div class="card-favorites">
+                    <picture>
+                        <source srcset="https://fdnd-agency.directus.app/assets/<%= huis.poster_image %>?format=webp" type="image/webp">
+                        <source srcset="https://fdnd-agency.directus.app/assets/<%= huis.poster_image %>?format=avif" type="image/avif">
+                        <img src="https://fdnd-agency.directus.app/assets/<%= huis.poster_image %>" alt="foto huis" width="400" height="400"  class="house-card">
+                    </picture>  
 
                     <article>
                         <ul>
-                            <a href="./huis/<%= huis.id %>"> <h2> <%= huis.street%> <%= huis.house_nr%> </h2> </a>
+                            <h2><a class="card-link" href="./huis/<%= huis.id %>"><%= huis.street%> <%= huis.house_nr%></a></h2>
                             <li>€ <%- huis.price %></li>
                             <li><%- huis.postal_code %> <%- huis.city %></li>
                             <li><%- huis.m2 %> m² • <%- huis.rooms %> Kamers</li>
@@ -29,7 +34,7 @@
                         </section> 
                     </form>
                 </div>
-            <% }) %>
+        <% }) %>
         </div> 
     </main>
 </body>
