@@ -6,6 +6,7 @@ import fetchJson from './helpers/fetch-json.js'
 
 // variable voor de index route
 const huizenHome = await fetchJson('https://fdnd-agency.directus.app/items/f_houses')
+const feedback = await fetchJson('https://fdnd-agency.directus.app/items/f_feedback')
 
 // hier maak ik een nieuwe express app aan
 const app = express()
@@ -28,9 +29,11 @@ let ratings = ''
 app.get('/', function (request, response) {
     response.render('index', {
       alleHuizen: huizenHome.data,
+      alleRatings : feedback.data,
       ratings: ratings
     });
-    console.log(huizenHome.data);
+    // console.log(huizenHome.data);
+    // console.log(feedback.data);
     console.log(ratings);
 })
 

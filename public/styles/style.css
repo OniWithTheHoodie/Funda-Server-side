@@ -30,13 +30,14 @@ body {
 
 /* mobile */
 .logo {
-  width: 15%;
+  width: 4.5em;
 }
 
 label.hamburger {
   font-size: 25px;
+  position: relative;
+  bottom: 0.2em;
  }
-
 
 
 input[type="checkbox"], .hamburger {
@@ -80,13 +81,13 @@ li a:hover{
 
 #toggle:checked ~ ul {
   display: block;
-  padding-top: 30px;
+  padding-top: 40px;
 }
 
 /* tablet  */
 @media (min-width: 30rem) {
     .logo {
-      width: 10%;
+      width: 5.5em;
     }
 
     input[type="checkbox"], label.hamburger {
@@ -98,7 +99,6 @@ li a:hover{
     }
 
     .desktop {
-      display: block;
       display: flex;
       flex-direction: row;
       gap: 1em;
@@ -107,6 +107,36 @@ li a:hover{
     li a:hover{
       background-color: #FFE2FF;
     }
+
+    nav > ul {
+      position: relative;
+      bottom: 2.5em;
+      justify-content: center;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 45rem) {
+  input[type="checkbox"], label.hamburger {
+    display: none;
+  }
+
+
+  .desktop {
+    display: flex;
+  }
+
+  .desktop li {
+    margin-right: 1em; /* Adjust spacing between desktop menu items */
+  }
+
+  .desktop li:last-child {
+    margin-right: 0; /* Remove margin from the last desktop menu item */
+  }
+
+  .desktop li a:hover {
+    background-color: unset; /* Remove hover background color */
+  }
 }
 
 /****************************************************************
@@ -220,6 +250,14 @@ input[type="radio"]:checked:not(:hover) {
 /* Style for deselected radio button labels */
 input[type="radio"]:checked:not(:hover) + label {
   color: #FFE2FF; 
+}
+
+.disabled-rating {
+  opacity: 0;
+}
+
+.confirm-rating {
+  opacity: 1;
 }
 
 /****************************************************************

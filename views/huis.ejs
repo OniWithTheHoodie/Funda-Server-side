@@ -6,9 +6,12 @@
         <section class="carousel">
             <picture class="card-container">
             <% house.gallery.forEach(image => { %>
+                <% if (image.directus_files_id.id) { %>
+                <img class="card" src="https://fdnd-agency.directus.app/assets/<%= image.directus_files_id.id %>" alt="foto huis" width="400" height="400">
+                <% } else { %>
                 <source class="card" src="https://fdnd-agency.directus.app/assets/<%= image.directus_files_id.id %>?format=webp" type="image/webp">
                 <source class="card" src="https://fdnd-agency.directus.app/assets/<%= image.directus_files_id.id %>?format=avif" type="image/avif">
-                <img class="card" src="https://fdnd-agency.directus.app/assets/<%= image.directus_files_id.id %>" alt="foto huis" width="400" height="400">
+                <% } %>
             <% }) %>
             </picture>
         </section>
