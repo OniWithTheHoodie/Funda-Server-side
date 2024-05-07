@@ -17,9 +17,9 @@
 
 
 body {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: "Proxima Nova", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 /****************************************************************
@@ -208,57 +208,50 @@ main {
   background-color: var(--secondary-bg-color);
 }
 
+article > h2,a {
+  text-decoration: none;
+  color: var(--color-main-text);
+}
+
 /****************************************************************
                                                                 *
                         Index.EJS Ratings                       *                        
                                                                 *
 *****************************************************************/
 
-form {
-  height: 0.5em auto;
+/* CSS styles for SVG */
+svg {
+  width: 25px;
+}
 
-& input[type="radio"] {
-    display: none;
-  }
+/* CSS styles for radio buttons */
+input[type="radio"] {
+  display: none;
+}
 
-& label {
-    font-size: 45px;
-    color: var(--color-main-text);
-    cursor: pointer;
-  }
+/* CSS styles for label */
+label {
+  cursor: pointer;
+}
 
-& .rating-stars {
-    direction: rtl;
-    unicode-bidi: bidi-override;
-  }
-
-& label:hover,
-  label:hover ~ label {
+/* CSS styles for SVG when checked */
+input:checked+label, /* The adjacent sibling combinator */
+input+label:not(input:checked ~ label) /* The general sibling combinator */
+{
   color: #FFE2FF;
 }
 
-& input[type="radio"]:checked ~ label {
+label:hover
+,form:hover /*maak alle labels geel op de hover*/
+{
   color: #FFE2FF;
 }
+
+label:hover ~ label /* zet de labels na de hoover op zwart*/
+{
+  color: black; 
 }
 
-/* Style for deselected radio buttons */
-input[type="radio"]:checked:not(:hover) {
-  display: none; 
-}
-
-/* Style for deselected radio button labels */
-input[type="radio"]:checked:not(:hover) + label {
-  color: #FFE2FF; 
-}
-
-.disabled-rating {
-  opacity: 0;
-}
-
-.confirm-rating {
-  opacity: 1;
-}
 
 /****************************************************************
                                                                 *

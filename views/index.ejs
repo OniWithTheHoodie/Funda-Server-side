@@ -28,11 +28,12 @@
                     </article> 
 
                     <!-- Form een class meegegeven zodat ik deze specifieke form te selecteren -->
-                    <form action="/" method="post" class="ratingsFavorieten">
-                        <section class="rating-stars">
-                            <%- include('./partials/detailed-rating', {index: index}) %> <!-- Partials meegegen dit is de form in detailed-rating.ejs de waardes en radio input worden ook meegeven als een object-->
-                        </section> 
-                    </form>
+                    <details>
+                        <summary>Beordeling</summary>
+                        <form action="/" method="post" class="ratingsFavorieten">
+                                <%- include('./partials/detailed-rating', {index: index}) %> <!-- Partials meegegen dit is de form in detailed-rating.ejs de waardes en radio input worden ook meegeven als een object-->
+                        </form>
+                    </details>  
                 </div>
         <% }) %>
         </div> 
