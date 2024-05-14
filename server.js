@@ -23,22 +23,29 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
 
 // 
-let ratings = ''
+// let ratings = ''
+const ratings = []
 
 // Get Route voor de index
 app.get('/', function (request, response) {
-    response.render('index', {
+      // fetch data directus table f_feedback
+      fetchJson('https://fdnd-agency.directus.app/items/f_feedback').then((BeoordelingData) => {
+      console.log(BeoordelingData)
+
+      response.render('index', {
       alleHuizen: huizenHome.data,
       alleRatings : feedback.data,
       ratings: ratings
-    });
+    
     // console.log(huizenHome.data);
     // console.log(feedback.data);
-    console.log(ratings);
+  })
+  console.log(ratings);
+  })
 })
 
 app.post('/', function (request, response) { 
-  ratings = request.body.star
+  ratings = request.body.stars
   console.log(request.body)
   response.redirect(300, '/')
 })
